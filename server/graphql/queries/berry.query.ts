@@ -31,9 +31,9 @@ export const BerryQuery = {
 export const AllBerriesQuery = {
   type: NamedAPIResourceListType,
   args: PaginationArgs,
-  resolve: async (_, args) => {
+  resolve: async (_, { limit, offset }) => {
     try {
-      const url = `${BERRY_URL}?limit=${args.limit}&offset=${args.offset}`;
+      const url = `${BERRY_URL}?limit=${limit}&offset=${offset}`;
       const response = await axios.get(url);
       return response.data;
     } catch (error) {
@@ -59,9 +59,9 @@ export const BerryFirmnessQuery = {
 export const AllBerryFirmnessQuery = {
   type: NamedAPIResourceListType,
   args: PaginationArgs,
-  resolve: async (_, args) => {
+  resolve: async (_, { limit, offset }) => {
     try {
-      const url = `${BERRY_FIRMNESS_URL}/?limit=${args.limit}&offset=${args.offset}`;
+      const url = `${BERRY_FIRMNESS_URL}/?limit=${limit}&offset=${offset}`;
       const response = await axios.get(url);
       return response.data;
     } catch (error) {
@@ -87,9 +87,9 @@ export const BerryFlavorQuery = {
 export const AllBerryFlavorQuery = {
   type: NamedAPIResourceListType,
   args: PaginationArgs,
-  resolve: async (_, args) => {
+  resolve: async (_, { limit, offset }) => {
     try {
-      const url = `${BERRY_FLAVOR_URL}/?limit=${args.limit}&offset=${args.offset}`;
+      const url = `${BERRY_FLAVOR_URL}/?limit=${limit}&offset=${offset}`;
       const response = await axios.get(url);
       return response.data;
     } catch (error) {
