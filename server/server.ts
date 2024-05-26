@@ -1,6 +1,6 @@
 import { GraphQLSchema } from "graphql";
-import { RootQuery } from "./server/graphql/queries";
-import { app } from "./server/app";
+import { RootQuery } from "./graphql/queries";
+import { app } from "./app/app";
 import { graphqlHTTP } from "express-graphql";
 
 const express = app;

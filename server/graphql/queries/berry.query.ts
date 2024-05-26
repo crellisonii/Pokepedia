@@ -11,20 +11,13 @@ import {
   NamedAPIResourceListType,
   PaginationArgs,
 } from "../types";
-import {
-  GraphQLFieldConfig,
-  GraphQLFieldConfigArgumentMap,
-  GraphQLInt,
-  GraphQLObjectType,
-  GraphQLSchema,
-} from "graphql";
 
 import axios from "axios";
 
 export const BerryQuery = {
   type: BerryType,
   args: NameIdArgs,
-  resolve: async (parent, args) => {
+  resolve: async (_, args) => {
     try {
       const url = `${BERRY_URL}/${args.idName}/`;
       const response = await axios.get(url);
@@ -38,7 +31,7 @@ export const BerryQuery = {
 export const AllBerriesQuery = {
   type: NamedAPIResourceListType,
   args: PaginationArgs,
-  resolve: async (parent, args) => {
+  resolve: async (_, args) => {
     try {
       const url = `${BERRY_URL}?limit=${args.limit}&offset=${args.offset}`;
       const response = await axios.get(url);
@@ -52,7 +45,7 @@ export const AllBerriesQuery = {
 export const BerryFirmnessQuery = {
   type: BerryFirmnessType,
   args: NameIdArgs,
-  resolve: async (parent, args) => {
+  resolve: async (_, args) => {
     try {
       const url = `${BERRY_FIRMNESS_URL}/${args.idName}/`;
       const response = await axios.get(url);
@@ -66,7 +59,7 @@ export const BerryFirmnessQuery = {
 export const AllBerryFirmnessQuery = {
   type: NamedAPIResourceListType,
   args: PaginationArgs,
-  resolve: async (parent, args) => {
+  resolve: async (_, args) => {
     try {
       const url = `${BERRY_FIRMNESS_URL}/?limit=${args.limit}&offset=${args.offset}`;
       const response = await axios.get(url);
@@ -80,7 +73,7 @@ export const AllBerryFirmnessQuery = {
 export const BerryFlavorQuery = {
   type: BerryFlavorType,
   args: NameIdArgs,
-  resolve: async (parent, args) => {
+  resolve: async (_, args) => {
     try {
       const url = `${BERRY_FLAVOR_URL}/${args.idName}/`;
       const response = await axios.get(url);
@@ -94,7 +87,7 @@ export const BerryFlavorQuery = {
 export const AllBerryFlavorQuery = {
   type: NamedAPIResourceListType,
   args: PaginationArgs,
-  resolve: async (parent, args) => {
+  resolve: async (_, args) => {
     try {
       const url = `${BERRY_FLAVOR_URL}/?limit=${args.limit}&offset=${args.offset}`;
       const response = await axios.get(url);
