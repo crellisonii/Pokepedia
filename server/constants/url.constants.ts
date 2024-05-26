@@ -9,3 +9,8 @@ export const BERRY_FLAVOR_URL = `${BASE_URL}/berry-flavor`;
 export const CONTEST_TYPE_URL = `${BASE_URL}/contest-type`;
 export const CONTEST_EFFECT_URL = `${BASE_URL}/contest-effect`;
 export const SUPER_CONTEST_EFFECT_URL = `${BASE_URL}/super-contest-effect`;
+
+// Encounter urls
+export const ENCOUNTER_METHOD_URL = `${BASE_URL}/encounter-method`;
+export const ENCOUNTER_CONDITION_URL = `${BASE_URL}/encounter-condition`;
+export const ENCOUNTER_CONDITION_VALUE_URL = `${BASE_URL}/encounter-condition-value`;

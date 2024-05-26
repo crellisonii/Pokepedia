@@ -14,6 +14,14 @@ import {
   ContestQuery,
   SuperContestEffectQuery,
 } from "./contest.query";
+import {
+  AllEncounterConditionQuery,
+  AllEncounterConditionValuesQuery,
+  AllEncounterMethodQuery,
+  EncounterConditionQuery,
+  EncounterConditionValuesQuery,
+  EncounterMethodQuery,
+} from "./encounter.query";
 
 import { GraphQLObjectType } from "graphql";
 
@@ -32,5 +40,11 @@ export const RootQuery = new GraphQLObjectType({
     AllContestEffectsQuery,
     SuperContestEffectQuery,
     AllSuperContestEffectsQuery,
+    EncounterMethodQuery,
+    AllEncounterMethodQuery,
+    EncounterConditionQuery,
+    AllEncounterConditionQuery,
+    EncounterConditionValuesQuery,
+    AllEncounterConditionValuesQuery,
   },
 });
