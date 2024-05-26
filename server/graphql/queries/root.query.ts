@@ -6,6 +6,14 @@ import {
   BerryFlavorQuery,
   BerryQuery,
 } from "./berry.query";
+import {
+  AllContestEffectsQuery,
+  AllContestsQuery,
+  AllSuperContestEffectsQuery,
+  ContestEffectQuery,
+  ContestQuery,
+  SuperContestEffectQuery,
+} from "./contest.query";
 
 import { GraphQLObjectType } from "graphql";
 
@@ -18,5 +26,11 @@ export const RootQuery = new GraphQLObjectType({
     AllBerryFirmnessQuery,
     BerryFlavorQuery,
     AllBerryFlavorQuery,
+    ContestQuery,
+    AllContestsQuery,
+    ContestEffectQuery,
+    AllContestEffectsQuery,
+    SuperContestEffectQuery,
+    AllSuperContestEffectsQuery,
   },
 });

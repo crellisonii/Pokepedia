@@ -1,25 +1,25 @@
 import {
-  BERRY_FIRMNESS_URL,
-  BERRY_FLAVOR_URL,
-  BERRY_URL,
+  CONTEST_EFFECT_URL,
+  CONTEST_TYPE_URL,
+  SUPER_CONTEST_EFFECT_URL,
 } from "../../constants";
 import {
-  BerryFirmnessType,
-  BerryFlavorType,
-  BerryType,
+  ContestEffectType,
+  ContestType,
   NameIdArgs,
   NamedAPIResourceListType,
   PaginationArgs,
+  SuperContestEffectType,
 } from "../types";
 
 import axios from "axios";
 
-export const BerryQuery = {
-  type: BerryType,
+export const ContestQuery = {
+  type: ContestType,
   args: NameIdArgs,
   resolve: async (_, args) => {
     try {
-      const url = `${BERRY_URL}/${args.idName}/`;
+      const url = `${CONTEST_TYPE_URL}/${args.idName}/`;
       const response = await axios.get(url);
       return response.data;
     } catch (error) {
@@ -28,13 +28,14 @@ export const BerryQuery = {
   },
 };
 
-export const AllBerriesQuery = {
+export const AllContestsQuery = {
   type: NamedAPIResourceListType,
   args: PaginationArgs,
   resolve: async (_, { limit, offset }) => {
     try {
-      const url = `${BERRY_URL}?limit=${limit}&offset=${offset}`;
+      const url = `${CONTEST_TYPE_URL}?limit=${limit}&offset=${offset}`;
       const response = await axios.get(url);
+      console.log(`🚀 ~ resolve: ~ response.data:`, response.data);
       return response.data;
     } catch (error) {
       console.log(error);
@@ -42,12 +43,12 @@ export const AllBerriesQuery = {
   },
 };
 
-export const BerryFirmnessQuery = {
-  type: BerryFirmnessType,
+export const ContestEffectQuery = {
+  type: ContestEffectType,
   args: NameIdArgs,
   resolve: async (_, args) => {
     try {
-      const url = `${BERRY_FIRMNESS_URL}/${args.idName}/`;
+      const url = `${CONTEST_EFFECT_URL}/${args.idName}/`;
       const response = await axios.get(url);
       return response.data;
     } catch (error) {
@@ -56,12 +57,12 @@ export const BerryFirmnessQuery = {
   },
 };
 
-export const AllBerryFirmnessQuery = {
+export const AllContestEffectsQuery = {
   type: NamedAPIResourceListType,
   args: PaginationArgs,
   resolve: async (_, { limit, offset }) => {
     try {
-      const url = `${BERRY_FIRMNESS_URL}/?limit=${limit}&offset=${offset}`;
+      const url = `${CONTEST_EFFECT_URL}?limit=${limit}&offset=${offset}`;
       const response = await axios.get(url);
       return response.data;
     } catch (error) {
@@ -70,12 +71,12 @@ export const AllBerryFirmnessQuery = {
   },
 };
 
-export const BerryFlavorQuery = {
-  type: BerryFlavorType,
+export const SuperContestEffectQuery = {
+  type: SuperContestEffectType,
   args: NameIdArgs,
   resolve: async (_, args) => {
     try {
-      const url = `${BERRY_FLAVOR_URL}/${args.idName}/`;
+      const url = `${SUPER_CONTEST_EFFECT_URL}/${args.idName}/`;
       const response = await axios.get(url);
       return response.data;
     } catch (error) {
@@ -84,12 +85,12 @@ export const BerryFlavorQuery = {
   },
 };
 
-export const AllBerryFlavorQuery = {
+export const AllSuperContestEffectsQuery = {
   type: NamedAPIResourceListType,
   args: PaginationArgs,
   resolve: async (_, { limit, offset }) => {
     try {
-      const url = `${BERRY_FLAVOR_URL}/?limit=${limit}&offset=${offset}`;
+      const url = `${SUPER_CONTEST_EFFECT_URL}?limit=${limit}&offset=${offset}`;
       const response = await axios.get(url);
       return response.data;
     } catch (error) {
